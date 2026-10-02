@@ -1,0 +1,19 @@
+<h1>Books</h1>
+<a href="/books/new">Add New Book</a>
+<table border="1">
+    <tr><th>Title</th><th>Author</th><th>Year</th><th>Copies</th><th>Actions</th></tr>
+    <% books.forEach(book => { %>
+        <tr>
+            <td><%= book.title %></td>
+            <td><%= book.author %></td>
+            <td><%= book.year %></td>
+            <td><%= book.copies %></td>
+            <td>
+                <a href="/books/<%= book._id %>/edit">Edit</a> |
+                <form action="/books/<%= book._id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    <% }); %>
+</table>

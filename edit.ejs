@@ -1,0 +1,8 @@
+<h1>Edit Book</h1>
+<form action="/books/<%= book._id %>?_method=PUT" method="POST">
+  <input name="title" value="<%= book.title %>" required>
+  <input name="author" value="<%= book.author %>" required>
+  <input name="year" type="number" value="<%= book.year %>">
+  <input name="copies" type="number" value="<%= book.copies %>">
+  <button>Update</button>
+</form>
